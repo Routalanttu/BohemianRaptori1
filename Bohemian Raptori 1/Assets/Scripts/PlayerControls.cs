@@ -31,6 +31,8 @@ public class PlayerControls : MonoBehaviour {
 
 	AudioSource audio;
 	public AudioClip jumpSound;
+	public AudioClip deathSound;
+	public AudioClip goThroughSound;
 
 	// Use this for initialization
 	void Start () {
@@ -163,6 +165,10 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	void Die () {
+		//Pakko laittaa ihmistä enemmän oikealle sivulle koska death-animaatio oli tehty leveämmäksi.
+		humanAnim.SetBool ("isDead", true);
+		audio.PlayOneShot (deathSound);
+
 		Debug.Log ("Death");
 	}
 
@@ -183,6 +189,7 @@ public class PlayerControls : MonoBehaviour {
 				Die ();
 			} else {
 				// Näytä avautuva ovi.
+				// play gothrusound
 			}
 		}
 		if (other.gameObject.CompareTag ("RaptorPassable")) {
@@ -190,6 +197,7 @@ public class PlayerControls : MonoBehaviour {
 				Die ();
 			} else {
 				// Näytä suhahtava puska.
+				// play gothrusound
 			}
 		}
 	}
