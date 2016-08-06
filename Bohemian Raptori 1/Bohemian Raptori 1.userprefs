@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RaptorControls.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelController.cs">
     <Files>
-      <File FileName="Assets\RaptorControls.cs" Line="49" Column="6" />
-      <File FileName="Assets\Scripts\PlayerControls.cs" Line="32" Column="37" />
-      <File FileName="Assets\ObjectMover.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FollowerCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelController.cs" Line="136" Column="3" />
+      <File FileName="Assets\Scripts\PlayerControls.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ObjectMover.cs" Line="1" Column="1" />
+      <File FileName="Assets\EchoLocation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

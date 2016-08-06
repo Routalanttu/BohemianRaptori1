@@ -2,23 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 
-/*
-
 public class LevelController : MonoBehaviour {
-	public Camera camera;
-	public float scrollSpeed = -1.0f;
-	public float start = 100.0f;
-	public float end = -100.0f;
+	public float scrollSpeed = -2.0f;
+	public float start = 10.0f;
+	public float end = -10.0f;
 	public bool isAlive = true;
+	public GameObject emptyPrefab;
 	public List<GameObject> prefabs;
 
 	private List<GameObject> alive = new List<GameObject>();
-	private int count = 0;
+
+	public PlayerControls player;
+
 
 	void Start() {
 		if (prefabs.Count <= 0) {
 			Debug.Log ("Prefabs havent been set!!");
 		}
+
 	}
 
 	void FixedUpdate() {
@@ -27,11 +28,39 @@ public class LevelController : MonoBehaviour {
 		}
 
 		// Update alive block positions..
-		float amount = Time.fixedTime * scrollSpeed;
+		float amount = Time.fixedDeltaTime * scrollSpeed;
 		foreach(var block in alive)
 		{
 			var info = block.GetComponent<BlockInfo>();
 			info.moveBlock (amount);
+		}
+	}
+
+	void startup() 
+	{
+		var prefab = emptyPrefab;
+		Vector3 lastEnd = new Vector3(
+			transform.position.x + end , 
+			transform.position.y, 
+			transform.position.z);
+
+		while(true) {
+			var go = addBlock(prefab, lastEnd);
+			var info = go.GetComponent<BlockInfo>();
+
+			go.transform.position = new Vector3(
+				lastEnd.x + info.getHalf() , 
+				lastEnd.y ,
+				lastEnd.z);
+
+			lastEnd = new Vector3 (
+				go.transform.position.x + info.getHalf(),
+				go.transform.position.y,
+				go.transform.position.z);
+
+			if (lastEnd.x > transform.position.x + start) {
+				break;
+			}
 		}
 	}
 
@@ -42,46 +71,42 @@ public class LevelController : MonoBehaviour {
 		}
 
 		float vStart = transform.position.x + start;
-		bool done = false;
-		do {
+		while(true)
+		{
+			GameObject last = null;
+			BlockInfo lastInfo = null;
+
 			if( alive.Count <= 0 ) {
-				var prefab = getPrefab();
-				var info = prefab.GetComponent<BlockInfo>();
-
-				addBlock(prefab, transform.position);
+				startup();
 			}
-			else {
-				var last = alive[alive.Count - 1];
-				var lastInfo = prefab.GetComponent<BlockInfo>();
+				
+			last = alive[alive.Count - 1];
+			lastInfo = last.GetComponent<BlockInfo>();
 
+			if(lastInfo.isPast(vStart)) {
 				var prefab = getPrefab();
-				var block = addBlock(prefab, transform.position);
+				var go = addBlock(prefab, transform.position);
 
-				var blockInfo = block.GetComponent<BlockInfo>();
+				var blockInfo = go.GetComponent<BlockInfo>();
 				go.transform.position = new Vector3(
 						lastInfo.getBack() + blockInfo.getHalf() , 
 						transform.position.y , 
 						transform.position.z);
 			}
-
-			var last = alive[alive.Count - 1];
-			var info = prefab.GetComponent<BlockInfo>();
-
-			if(!info.isPast(vStart)) {
-				done = true;
+			else {
+				break;
 			}
-		} 
-		while(!done);
+		}
 
 		float vEnd = transform.position.x + end;
-		for (var i = alive.Count; i >= 0; --i) {
+		for (var i = alive.Count - 1; i >= 0; --i) {
 			var block = alive[i];
 			var info = block.GetComponent<BlockInfo>();
 
 			if( info == null || info.isPast(vEnd) ) {
 				Destroy(block);
+				alive.RemoveAt(i);
 			}
-			alive.RemoveAt(i);
 		}
 	}
 
@@ -101,9 +126,46 @@ public class LevelController : MonoBehaviour {
 		}
 
 		alive.Add (go);
+
+		Debug.Log (go.transform.name);
+		Debug.Log (go.transform.FindChild ("RaptorVersion").gameObject.transform.name);
+		Debug.Log (go.transform.FindChild ("HumanChild").gameObject.transform.name);
+		Debug.Log (go.transform.FindChild ("HumanChild").FindChild ("RaptorChild").gameObject.transform.name);
+
+		if (player.GetRaptorityState () == true) {
+			go.GetComponent<SpriteRenderer> ().enabled = false;
+
+			go.transform.FindChild ("RaptorVersion").gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+			go.transform.FindChild ("HumanChild").gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+			go.transform.FindChild ("HumanChild").FindChild ("RaptorChild").gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+		} else if (player.GetRaptorityState () == false) {
+			go.GetComponent<SpriteRenderer> ().enabled = true;
+
+			go.transform.FindChild ("RaptorVersion").gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+			go.transform.FindChild ("HumanChild").gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+			go.transform.FindChild ("HumanChild").FindChild ("RaptorChild").gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+		}
+
+		//SetVisibleWorld (go, player.GetRaptorityState ());
+
 		return go;
 	}
+
+	/*
+	void SetVisibleWorld (GameObject go, bool isRaptor) {
+		if (go.transform.name == "RaptorVersion") {
+			return;
+		}
+
+		if (isRaptor) {
+			go.GetComponent<SpriteRenderer> ().enabled = false;
+
+			go.transform.Find ("RaptorVersion").gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+			go.transform.Find ("HumanChild").gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+			go.transform.Find ("RaptorChild").gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+		} else {
+
+		}
+	}
+	*/
 }
-
-
-*/

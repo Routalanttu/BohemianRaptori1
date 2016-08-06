@@ -20,8 +20,8 @@ public class PlayerControls : MonoBehaviour {
 	private bool isRaptor;
 
 
-	private GameObject[] humanGos;
-	private GameObject[] raptorGos;
+	//private GameObject[] humanGos;
+	//private GameObject[] raptorGos;
 
 
 	//private SpriteRenderer[] humanSprites;
@@ -39,8 +39,10 @@ public class PlayerControls : MonoBehaviour {
 		isRaptor = false;
 		rb = GetComponent<Rigidbody2D> ();
 
+		/*
 		humanGos = GameObject.FindGameObjectsWithTag ("HumanWorld");
 		raptorGos = GameObject.FindGameObjectsWithTag ("RaptorWorld");
+		*/
 
 		/*
 		humanSprites = new SpriteRenderer[humanGos.Length];
@@ -149,12 +151,16 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	void SetHumanObjectVisibility (bool newState) {
+		GameObject[] humanGos = GameObject.FindGameObjectsWithTag ("HumanWorld");
+
 		for (int i = 0; i < humanGos.Length; i++) {
 			humanGos [i].GetComponent<SpriteRenderer> ().enabled = newState;
 		}
 	}
 
 	void SetRaptorObjectVisibility (bool newState) {
+		GameObject[] raptorGos = GameObject.FindGameObjectsWithTag ("RaptorWorld");
+
 		for (int i = 0; i < raptorGos.Length; i++) {
 			raptorGos [i].GetComponent<SpriteRenderer> ().enabled = newState;
 		}
@@ -200,6 +206,11 @@ public class PlayerControls : MonoBehaviour {
 				// play gothrusound
 			}
 		}
+	}
+
+
+	public bool GetRaptorityState () {
+		return isRaptor;
 	}
 
 	
