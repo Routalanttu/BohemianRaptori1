@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 8834c65215348ad42b85d9752853d96c
+timeCreated: 1470493999
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dinopush_0
+    21300002: dinopush_1
+    21300004: dinopush_2
+    21300006: dinopush_3
+    21300008: dinopush_4
+    21300010: dinopush_5
+    21300012: dinopush_6
+    21300014: dinopush_7
+    21300016: dinopush_8
+    21300018: dinopush_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dinopush_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 98
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104, y: -98}
+        - {x: 104, y: -96}
+        - {x: 101, y: -95}
+        - {x: 99, y: -98}
+      - - {x: 116, y: -6}
+        - {x: 3, y: -35}
+        - {x: 3, y: -54}
+        - {x: 95, y: -94}
+        - {x: 156, y: -94}
+        - {x: 156, y: -6}
+    - name: dinopush_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 98
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 105, y: -93}
+        - {x: 107, y: -95}
+        - {x: 110, y: -94}
+        - {x: 110, y: -91}
+        - {x: 108, y: -89}
+        - {x: 105, y: -90}
+      - - {x: 139, y: -59}
+        - {x: 136, y: -58}
+        - {x: 139, y: -59}
+        - {x: 143, y: -63}
+        - {x: 154, y: -57}
+        - {x: 154, y: -19}
+        - {x: 147, y: -14}
+        - {x: 128, y: -14}
+        - {x: 124, y: -19}
+        - {x: 9, y: -46}
+        - {x: 8, y: -47}
+        - {x: 8, y: -61}
+        - {x: 70, y: -94}
+        - {x: 153, y: -94}
+        - {x: 154, y: -90}
+        - {x: 154, y: -84}
+        - {x: 150, y: -81}
+    - name: dinopush_2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 98
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 127, y: -9}
+        - {x: 14, y: -48}
+        - {x: 13, y: -50}
+        - {x: 13, y: -62}
+        - {x: 28, y: -94}
+        - {x: 155, y: -94}
+        - {x: 155, y: -10}
+        - {x: 152, y: -9}
+    - name: dinopush_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 98
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: -10}
+        - {x: 11, y: -28}
+        - {x: 11, y: -57}
+        - {x: 51, y: -94}
+        - {x: 158, y: -94}
+        - {x: 158, y: -10}
+    - name: dinopush_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 98
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: -30}
+        - {x: 8, y: -38}
+        - {x: 9, y: -39}
+        - {x: 55, y: -90}
+        - {x: 70, y: -93}
+        - {x: 123, y: -93}
+        - {x: 158, y: -92}
+        - {x: 158, y: -6}
+        - {x: 57, y: -6}
+        - {x: 22, y: -8}
+    - name: dinopush_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: -13}
+        - {x: 3, y: -35}
+        - {x: 3, y: -66}
+        - {x: 66, y: -94}
+        - {x: 146, y: -94}
+        - {x: 154, y: -86}
+        - {x: 154, y: -13}
+    - name: dinopush_6
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 108, y: -93}
+        - {x: 110, y: -95}
+        - {x: 113, y: -94}
+        - {x: 113, y: -91}
+        - {x: 111, y: -89}
+        - {x: 108, y: -90}
+      - - {x: 148, y: -66}
+        - {x: 157, y: -54}
+        - {x: 157, y: -15}
+        - {x: 151, y: -11}
+        - {x: 85, y: -11}
+        - {x: 11, y: -44}
+        - {x: 11, y: -80}
+        - {x: 33, y: -94}
+        - {x: 157, y: -94}
+        - {x: 157, y: -81}
+        - {x: 142, y: -59}
+        - {x: 139, y: -58}
+        - {x: 142, y: -59}
+    - name: dinopush_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111, y: -7}
+        - {x: 13, y: -40}
+        - {x: 13, y: -57}
+        - {x: 28, y: -61}
+        - {x: 46, y: -61}
+        - {x: 57, y: -59}
+        - {x: 90, y: -93}
+        - {x: 110, y: -89}
+        - {x: 109, y: -85}
+        - {x: 109, y: -84}
+        - {x: 109, y: -85}
+        - {x: 115, y: -94}
+        - {x: 135, y: -94}
+        - {x: 153, y: -57}
+        - {x: 153, y: -7}
+    - name: dinopush_8
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118, y: -69}
+        - {x: 118, y: -70}
+        - {x: 117, y: -81}
+        - {x: 135, y: -94}
+        - {x: 145, y: -94}
+        - {x: 156, y: -92}
+        - {x: 156, y: -12}
+        - {x: 151, y: -6}
+        - {x: 89, y: -6}
+        - {x: 11, y: -39}
+        - {x: 11, y: -43}
+        - {x: 14, y: -47}
+        - {x: 62, y: -94}
+        - {x: 108, y: -94}
+        - {x: 109, y: -92}
+        - {x: 105, y: -78}
+        - {x: 113, y: -74}
+      - - {x: 135, y: -68}
+        - {x: 137, y: -70}
+        - {x: 140, y: -69}
+        - {x: 141, y: -65}
+        - {x: 139, y: -63}
+        - {x: 136, y: -64}
+    - name: dinopush_9
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 0
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 106, y: -1}
+        - {x: 8, y: -25}
+        - {x: 8, y: -51}
+        - {x: 47, y: -84}
+        - {x: 158, y: -84}
+        - {x: 158, y: -1}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

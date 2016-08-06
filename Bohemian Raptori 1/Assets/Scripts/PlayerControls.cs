@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour {
+
+	private int score;
+
 
 	Rigidbody2D rb;
 	Vector2 jumpDirection;
@@ -15,10 +19,16 @@ public class PlayerControls : MonoBehaviour {
 	private float jumpCooldown;
 	private float punchCooldown;
 	private float shiftCooldown;
+	private float gothruCooldown;
 
 
 	private bool isRaptor;
 
+	private bool isAlive;
+
+
+	public Text scoreText;
+	public Text resetText;
 
 	//private GameObject[] humanGos;
 	//private GameObject[] raptorGos;
@@ -36,8 +46,13 @@ public class PlayerControls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		isAlive = true;
 		isRaptor = false;
 		rb = GetComponent<Rigidbody2D> ();
+
+
+		scoreText.text = "Score: " + score + "      Z = Switch realities   X = Jump   C = Punch   R = Reset";
+		resetText.enabled = false;
 
 		/*
 		humanGos = GameObject.FindGameObjectsWithTag ("HumanWorld");
@@ -77,41 +92,46 @@ public class PlayerControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetButton ("Jump") && (jumpCooldown <= 0f && punchCooldown <= 0f) && (transform.position.y < -3.7f)) {
-			audio.PlayOneShot(jumpSound);
-			rb.AddForce(jumpDirection*jumpPower);
-			humanAnim.SetBool ("isJumping", true);
-			raptorAnim.SetBool ("isJumping", true);
-			jumpCooldown = 0.75f;
-		}
-
-		if (Input.GetButton ("Fire1") && jumpCooldown <= 0f && punchCooldown <= 0f) {
-			audio.PlayDelayed (0.2f);
-			humanAnim.SetBool ("isPunching", true);
-			raptorAnim.SetBool ("isPunching", true);
-			punchCooldown = 0.75f;
-		}
-
-		if (Input.GetButton ("Fire2") && shiftCooldown <= 0f) {
-			if (!isRaptor) {
-				//raptorRenderer.enabled = true;
-				//humanRenderer.enabled = false;
-				SetRaptorObjectVisibility(true);
-				SetHumanObjectVisibility (false);
-				isRaptor = true;
-				jumpPower = 240f;
-			} else if (isRaptor) {
-				//raptorRenderer.enabled = false;
-				//humanRenderer.enabled = true;
-				SetRaptorObjectVisibility(false);
-				SetHumanObjectVisibility(true);
-				isRaptor = false;
-				jumpPower = 120f;
+		if (isAlive) {
+			if (Input.GetButton ("Jump") && (jumpCooldown <= 0f && punchCooldown <= 0f) && (transform.position.y < -3.7f)) {
+				audio.PlayOneShot (jumpSound);
+				rb.AddForce (jumpDirection * jumpPower);
+				humanAnim.SetBool ("isJumping", true);
+				raptorAnim.SetBool ("isJumping", true);
+				jumpCooldown = 0.75f;
 			}
-			shiftCooldown = 0.25f;
+
+			if (Input.GetButton ("Fire1") && jumpCooldown <= 0f && punchCooldown <= 0f) {
+				audio.PlayDelayed (0.2f);
+				humanAnim.SetBool ("isPunching", true);
+				raptorAnim.SetBool ("isPunching", true);
+				punchCooldown = 0.75f;
+			}
+
+			if (Input.GetButton ("Fire2") && shiftCooldown <= 0f) {
+				if (!isRaptor) {
+					//raptorRenderer.enabled = true;
+					//humanRenderer.enabled = false;
+					SetRaptorObjectVisibility (true);
+					SetHumanObjectVisibility (false);
+					isRaptor = true;
+					jumpPower = 240f;
+				} else if (isRaptor) {
+					//raptorRenderer.enabled = false;
+					//humanRenderer.enabled = true;
+					SetRaptorObjectVisibility (false);
+					SetHumanObjectVisibility (true);
+					isRaptor = false;
+					jumpPower = 120f;
+				}
+				shiftCooldown = 0.25f;
+			}
+
 		}
 
-
+		if (Input.GetKey (KeyCode.R)) {
+			Application.LoadLevel ("Main");
+		}
 
 		//Debug.Log (transform.position.y);
 	}
@@ -120,6 +140,7 @@ public class PlayerControls : MonoBehaviour {
 		JumpParameterCheck ();
 		PunchParameterCheck ();
 		ShiftParameterCheck ();
+		GothruParameterCheck ();
 	}
 
 	void JumpParameterCheck () {
@@ -150,6 +171,16 @@ public class PlayerControls : MonoBehaviour {
 		}
 	}
 
+	void GothruParameterCheck () {
+		if (gothruCooldown > 0f) {
+			gothruCooldown -= Time.deltaTime;
+		}
+		if (gothruCooldown <= 0f) {
+			humanAnim.SetBool ("isPassing", false);
+			raptorAnim.SetBool ("isPassing", false);
+		}
+	}
+
 	void SetHumanObjectVisibility (bool newState) {
 		GameObject[] humanGos = GameObject.FindGameObjectsWithTag ("HumanWorld");
 
@@ -173,9 +204,13 @@ public class PlayerControls : MonoBehaviour {
 	void Die () {
 		//Pakko laittaa ihmistä enemmän oikealle sivulle koska death-animaatio oli tehty leveämmäksi.
 		humanAnim.SetBool ("isDead", true);
+		raptorAnim.SetBool ("isDead", true);
 		audio.PlayOneShot (deathSound);
 
 		Debug.Log ("Death");
+
+		isAlive = false;
+		resetText.enabled = true;
 	}
 
 
@@ -183,9 +218,13 @@ public class PlayerControls : MonoBehaviour {
 		if (other.gameObject.CompareTag("Jumpable")) {
 			Die();
 		}
+		if (other.gameObject.CompareTag("JumpScorer")) {
+			score++;
+		}
 		if (other.gameObject.CompareTag("Punchable")) {
 			if ((punchCooldown >= 0.01f) && (!isRaptor)) {
 				// Mummon turpaansaanti
+				score++;
 			} else {
 				Die ();
 			}
@@ -195,7 +234,10 @@ public class PlayerControls : MonoBehaviour {
 				Die ();
 			} else {
 				// Näytä avautuva ovi.
+				humanAnim.SetBool("isPassing",true);
+				gothruCooldown = 0.5f;
 				// play gothrusound
+				score++;
 			}
 		}
 		if (other.gameObject.CompareTag ("RaptorPassable")) {
@@ -203,14 +245,23 @@ public class PlayerControls : MonoBehaviour {
 				Die ();
 			} else {
 				// Näytä suhahtava puska.
+				raptorAnim.SetBool("isPassing",true);
 				// play gothrusound
+				score++;
 			}
 		}
+
+		scoreText.text = "Score: " + score + "      Z = Switch realities   X = Jump   C = Punch   R = Reset";
+		Debug.Log (score);
 	}
 
 
 	public bool GetRaptorityState () {
 		return isRaptor;
+	}
+
+	public bool GetAliveness() {
+		return isAlive;
 	}
 
 	

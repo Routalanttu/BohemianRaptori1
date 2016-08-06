@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: acd4003cdfdfb4e42a5e493e52f0370e
+timeCreated: 1470494308
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dinodeath166x98_0
+    21300002: dinodeath166x98_1
+    21300004: dinodeath166x98_2
+    21300006: dinodeath166x98_3
+    21300008: dinodeath166x98_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dinodeath166x98_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 165
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -6}
+        - {x: 25, y: -31}
+        - {x: 7, y: -38}
+        - {x: 7, y: -54}
+        - {x: 93, y: -90}
+        - {x: 107, y: -94}
+        - {x: 154, y: -94}
+        - {x: 160, y: -39}
+        - {x: 160, y: -8}
+        - {x: 158, y: -6}
+    - name: dinodeath166x98_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 165
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 108, y: -93}
+        - {x: 110, y: -95}
+        - {x: 113, y: -94}
+        - {x: 113, y: -91}
+        - {x: 111, y: -89}
+        - {x: 108, y: -90}
+      - - {x: 142, y: -59}
+        - {x: 139, y: -58}
+        - {x: 142, y: -59}
+        - {x: 156, y: -75}
+        - {x: 156, y: -13}
+        - {x: 108, y: -13}
+        - {x: 11, y: -45}
+        - {x: 11, y: -53}
+        - {x: 18, y: -58}
+        - {x: 77, y: -92}
+        - {x: 108, y: -94}
+        - {x: 156, y: -94}
+        - {x: 156, y: -83}
+        - {x: 153, y: -81}
+    - name: dinodeath166x98_2
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 165
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 116, y: -14}
+        - {x: 8, y: -55}
+        - {x: 8, y: -72}
+        - {x: 86, y: -94}
+        - {x: 130, y: -94}
+        - {x: 159, y: -68}
+        - {x: 159, y: -14}
+    - name: dinodeath166x98_3
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 165
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 126, y: -39}
+        - {x: 6, y: -60}
+        - {x: 6, y: -87}
+        - {x: 35, y: -94}
+        - {x: 141, y: -94}
+        - {x: 162, y: -67}
+        - {x: 162, y: -40}
+        - {x: 161, y: -39}
+    - name: dinodeath166x98_4
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 0
+        width: 165
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 80, y: -51}
+        - {x: 4, y: -78}
+        - {x: 4, y: -97}
+        - {x: 165, y: -97}
+        - {x: 165, y: -77}
+        - {x: 124, y: -51}
+      - - {x: 3, y: -90}
+        - {x: 3, y: -87}
+        - {x: 0, y: -86}
+        - {x: 0, y: -91}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

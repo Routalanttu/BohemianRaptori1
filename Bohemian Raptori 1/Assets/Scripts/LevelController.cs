@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LevelController : MonoBehaviour {
-	public float scrollSpeed = -2.0f;
+	public float scrollSpeed = -2f;
 	public float start = 10.0f;
 	public float end = -10.0f;
 	public bool isAlive = true;
@@ -23,7 +23,7 @@ public class LevelController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if( !isAlive ) {
+		if(!player.GetAliveness()) {
 			return;
 		}
 
@@ -66,7 +66,7 @@ public class LevelController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if( !isAlive ) {
+		if(!player.GetAliveness()) {
 			return;
 		}
 
