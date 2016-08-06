@@ -1,0 +1,330 @@
+fileFormatVersion: 2
+guid: 21668a7e72de1174bae877a7ec8c5478
+timeCreated: 1470464653
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dinorun_0
+    21300002: dinorun_1
+    21300004: dinorun_2
+    21300006: dinorun_3
+    21300008: dinorun_4
+    21300010: dinorun_5
+    21300012: dinorun_6
+    21300014: dinorun_7
+    21300016: dinorun_8
+    21300018: dinorun_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dinorun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: -7}
+        - {x: 3, y: -37}
+        - {x: 3, y: -45}
+        - {x: 38, y: -79}
+        - {x: 114, y: -95}
+        - {x: 156, y: -95}
+        - {x: 156, y: -7}
+      - - {x: 104, y: -2}
+        - {x: 104, y: 0}
+        - {x: 99, y: 0}
+        - {x: 101, y: -3}
+    - name: dinorun_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 99
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 105, y: -94}
+        - {x: 107, y: -96}
+        - {x: 110, y: -95}
+        - {x: 110, y: -92}
+        - {x: 108, y: -90}
+        - {x: 105, y: -91}
+      - - {x: 139, y: -60}
+        - {x: 136, y: -59}
+        - {x: 139, y: -60}
+        - {x: 153, y: -76}
+        - {x: 153, y: -14}
+        - {x: 105, y: -14}
+        - {x: 8, y: -46}
+        - {x: 8, y: -63}
+        - {x: 70, y: -95}
+        - {x: 153, y: -95}
+        - {x: 153, y: -84}
+        - {x: 150, y: -82}
+    - name: dinorun_2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 99
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: -8}
+        - {x: 14, y: -49}
+        - {x: 13, y: -51}
+        - {x: 13, y: -58}
+        - {x: 28, y: -62}
+        - {x: 46, y: -62}
+        - {x: 88, y: -95}
+        - {x: 151, y: -95}
+        - {x: 152, y: -91}
+        - {x: 152, y: -8}
+    - name: dinorun_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 99
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 156, y: -80}
+        - {x: 156, y: -7}
+        - {x: 98, y: -7}
+        - {x: 11, y: -26}
+        - {x: 11, y: -62}
+        - {x: 55, y: -95}
+        - {x: 106, y: -95}
+        - {x: 107, y: -94}
+        - {x: 126, y: -95}
+        - {x: 149, y: -95}
+    - name: dinorun_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 99
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 99, y: -2}
+        - {x: 8, y: -29}
+        - {x: 8, y: -47}
+        - {x: 62, y: -94}
+        - {x: 108, y: -94}
+        - {x: 158, y: -84}
+        - {x: 158, y: -4}
+        - {x: 155, y: -2}
+    - name: dinorun_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 156, y: -36}
+        - {x: 156, y: -9}
+        - {x: 154, y: -7}
+        - {x: 105, y: -7}
+        - {x: 3, y: -26}
+        - {x: 3, y: -55}
+        - {x: 68, y: -95}
+        - {x: 146, y: -95}
+        - {x: 147, y: -94}
+        - {x: 147, y: -88}
+        - {x: 143, y: -81}
+        - {x: 155, y: -43}
+      - - {x: 104, y: -2}
+        - {x: 104, y: 0}
+        - {x: 99, y: 0}
+        - {x: 101, y: -3}
+    - name: dinorun_6
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 105, y: -94}
+        - {x: 107, y: -96}
+        - {x: 110, y: -95}
+        - {x: 110, y: -92}
+        - {x: 108, y: -90}
+        - {x: 105, y: -91}
+      - - {x: 136, y: -59}
+        - {x: 139, y: -60}
+        - {x: 143, y: -64}
+        - {x: 153, y: -56}
+        - {x: 153, y: -20}
+        - {x: 152, y: -17}
+        - {x: 147, y: -14}
+        - {x: 106, y: -14}
+        - {x: 9, y: -47}
+        - {x: 8, y: -50}
+        - {x: 8, y: -55}
+        - {x: 11, y: -59}
+        - {x: 67, y: -95}
+        - {x: 153, y: -95}
+        - {x: 153, y: -87}
+        - {x: 150, y: -81}
+        - {x: 139, y: -60}
+    - name: dinorun_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 116, y: -8}
+        - {x: 14, y: -49}
+        - {x: 13, y: -51}
+        - {x: 13, y: -58}
+        - {x: 28, y: -62}
+        - {x: 46, y: -62}
+        - {x: 57, y: -60}
+        - {x: 92, y: -92}
+        - {x: 104, y: -91}
+        - {x: 108, y: -88}
+        - {x: 109, y: -86}
+        - {x: 109, y: -85}
+        - {x: 109, y: -86}
+        - {x: 115, y: -95}
+        - {x: 149, y: -95}
+        - {x: 152, y: -90}
+        - {x: 152, y: -8}
+    - name: dinorun_8
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118, y: -70}
+        - {x: 118, y: -71}
+        - {x: 117, y: -82}
+        - {x: 135, y: -95}
+        - {x: 140, y: -95}
+        - {x: 156, y: -90}
+        - {x: 156, y: -87}
+        - {x: 148, y: -75}
+        - {x: 156, y: -61}
+        - {x: 156, y: -10}
+        - {x: 151, y: -7}
+        - {x: 105, y: -7}
+        - {x: 11, y: -37}
+        - {x: 11, y: -45}
+        - {x: 14, y: -48}
+        - {x: 62, y: -95}
+        - {x: 108, y: -95}
+        - {x: 109, y: -93}
+        - {x: 105, y: -79}
+        - {x: 113, y: -75}
+      - - {x: 135, y: -69}
+        - {x: 137, y: -71}
+        - {x: 140, y: -70}
+        - {x: 141, y: -66}
+        - {x: 139, y: -64}
+        - {x: 136, y: -65}
+    - name: dinorun_9
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1
+        width: 158
+        height: 98
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 145, y: -68}
+        - {x: 148, y: -53}
+        - {x: 152, y: -32}
+        - {x: 148, y: -28}
+        - {x: 157, y: -20}
+        - {x: 158, y: -19}
+        - {x: 158, y: -2}
+        - {x: 76, y: -2}
+        - {x: 8, y: -26}
+        - {x: 8, y: -51}
+        - {x: 48, y: -85}
+        - {x: 157, y: -85}
+        - {x: 156, y: -71}
+        - {x: 150, y: -68}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
