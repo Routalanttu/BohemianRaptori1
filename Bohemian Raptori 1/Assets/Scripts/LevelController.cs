@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+
 public class LevelController : MonoBehaviour {
 	public Camera camera;
 	public float scrollSpeed = -1.0f;
 	public float start = 100.0f;
 	public float end = -100.0f;
-	public bool alive = true;
+	public bool isAlive = true;
 	public List<GameObject> prefabs;
 
 	private List<GameObject> alive = new List<GameObject>();
@@ -20,7 +22,7 @@ public class LevelController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if( !alive ) {
+		if( !isAlive ) {
 			return;
 		}
 
@@ -35,7 +37,7 @@ public class LevelController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if( !alive ) {
+		if( !isAlive ) {
 			return;
 		}
 
@@ -102,3 +104,6 @@ public class LevelController : MonoBehaviour {
 		return go;
 	}
 }
+
+
+*/

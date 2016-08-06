@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EchoLocation.cs" />
+     <Compile Include="Assets\Scripts\BlockInfo.cs" />
      <Compile Include="Assets\Scripts\FollowerCamera.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\ObjectMover.cs" />
