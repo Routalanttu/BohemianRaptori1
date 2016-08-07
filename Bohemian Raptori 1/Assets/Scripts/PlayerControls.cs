@@ -30,6 +30,9 @@ public class PlayerControls : MonoBehaviour {
 	public Text scoreText;
 	public Text resetText;
 
+	private AudioSource humanMusic;
+	private AudioSource raptorMusic;
+
 	//private GameObject[] humanGos;
 	//private GameObject[] raptorGos;
 
@@ -92,6 +95,9 @@ public class PlayerControls : MonoBehaviour {
 		audio = GetComponent<AudioSource> ();
 		audio.PlayOneShot (resetSound);
 
+		humanMusic = GameObject.FindGameObjectWithTag ("HumanMusic").GetComponent<AudioSource> ();
+		raptorMusic = GameObject.FindGameObjectWithTag ("RaptorMusic").GetComponent<AudioSource> ();
+
 	}
 	
 	// Update is called once per frame
@@ -121,6 +127,8 @@ public class PlayerControls : MonoBehaviour {
 					isRaptor = true;
 					jumpPower = 240f;
 					audio.PlayOneShot (shiftSound);
+					//humanMusic.volume = 0f;
+					//raptorMusic.volume = 1f;
 				} else if (isRaptor) {
 					//raptorRenderer.enabled = false;
 					//humanRenderer.enabled = true;
@@ -129,6 +137,8 @@ public class PlayerControls : MonoBehaviour {
 					isRaptor = false;
 					jumpPower = 120f;
 					audio.PlayOneShot (shiftSound);
+					//humanMusic.volume = 1f;
+					//raptorMusic.volume = 0f;
 				}
 				shiftCooldown = 0.25f;
 			}
@@ -139,7 +149,17 @@ public class PlayerControls : MonoBehaviour {
 			Application.LoadLevel ("Main");
 		}
 
-		//Debug.Log (transform.position.y);
+		if (isRaptor && humanMusic.volume > 0f) {
+			humanMusic.volume -= Time.deltaTime;
+			raptorMusic.volume += Time.deltaTime;
+		}
+
+		if (isRaptor == false && raptorMusic.volume > 0f) {
+			raptorMusic.volume -= Time.deltaTime;
+			humanMusic.volume += Time.deltaTime;
+		}
+
+		Debug.Log ("HM " + humanMusic.volume + "   RM " + raptorMusic.volume);
 	}
 
 	void Update () {
