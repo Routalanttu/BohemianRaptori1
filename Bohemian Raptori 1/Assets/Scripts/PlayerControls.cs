@@ -43,9 +43,12 @@ public class PlayerControls : MonoBehaviour {
 	public AudioClip jumpSound;
 	public AudioClip deathSound;
 	public AudioClip goThroughSound;
+	public AudioClip shiftSound;
+	public AudioClip resetSound;
 
 	// Use this for initialization
 	void Start () {
+		
 		isAlive = true;
 		isRaptor = false;
 		rb = GetComponent<Rigidbody2D> ();
@@ -87,6 +90,7 @@ public class PlayerControls : MonoBehaviour {
 		jumpDirection = new Vector2 (0f,1f);
 
 		audio = GetComponent<AudioSource> ();
+		audio.PlayOneShot (resetSound);
 
 	}
 	
@@ -116,6 +120,7 @@ public class PlayerControls : MonoBehaviour {
 					SetHumanObjectVisibility (false);
 					isRaptor = true;
 					jumpPower = 240f;
+					audio.PlayOneShot (shiftSound);
 				} else if (isRaptor) {
 					//raptorRenderer.enabled = false;
 					//humanRenderer.enabled = true;
@@ -123,6 +128,7 @@ public class PlayerControls : MonoBehaviour {
 					SetHumanObjectVisibility (true);
 					isRaptor = false;
 					jumpPower = 120f;
+					audio.PlayOneShot (shiftSound);
 				}
 				shiftCooldown = 0.25f;
 			}
@@ -219,11 +225,19 @@ public class PlayerControls : MonoBehaviour {
 			Die();
 		}
 		if (other.gameObject.CompareTag("JumpScorer")) {
+			Animator duckerAnim = other.gameObject.transform.parent.parent.GetComponent<Animator> ();
+
+			duckerAnim.SetBool ("isDead", true);
+
 			score++;
 		}
 		if (other.gameObject.CompareTag("Punchable")) {
 			if ((punchCooldown >= 0.01f) && (!isRaptor)) {
-				// Mummon turpaansaanti
+
+				Animator grannyAnim = other.gameObject.transform.parent.GetComponent<Animator> ();
+
+				grannyAnim.SetBool ("isDead", true);
+
 				score++;
 			} else {
 				Die ();
@@ -233,11 +247,15 @@ public class PlayerControls : MonoBehaviour {
 			if (isRaptor) {
 				Die ();
 			} else {
+				Animator doorAnim = other.gameObject.transform.FindChild ("Door").GetComponent<Animator> ();
+
 				// Näytä avautuva ovi.
 				humanAnim.SetBool("isPassing",true);
 				gothruCooldown = 0.5f;
-				// play gothrusound
+				audio.PlayOneShot (goThroughSound);
 				score++;
+
+				doorAnim.SetBool ("isOpened", true);
 			}
 		}
 		if (other.gameObject.CompareTag ("RaptorPassable")) {
@@ -246,8 +264,13 @@ public class PlayerControls : MonoBehaviour {
 			} else {
 				// Näytä suhahtava puska.
 				raptorAnim.SetBool("isPassing",true);
-				// play gothrusound
+				audio.PlayOneShot (goThroughSound);
 				score++;
+
+				Animator guardAnim = other.gameObject.transform.parent.GetComponent<Animator> ();
+
+				guardAnim.SetBool ("isDead", true);
+
 			}
 		}
 
